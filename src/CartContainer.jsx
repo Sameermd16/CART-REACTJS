@@ -4,7 +4,7 @@ import CartItem from './CartItem'
 
 
 export default function CartContainer() {
-    const { cart, total } = useGlobalContext()
+    const { cart, total, clearCart } = useGlobalContext()
 
     console.log(cart)
 
@@ -36,7 +36,7 @@ export default function CartContainer() {
                 <div className='cart-total'>
                     <h4>total <span>${total}</span></h4>
                 </div>
-                <button className='btn clear-btn'>
+                <button className='btn clear-btn' onClick={clearCart}>
                     clear cart
                 </button>
             </footer>

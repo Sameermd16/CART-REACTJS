@@ -1,5 +1,6 @@
 import React from 'react'
 import { useGlobalContext } from './context'
+import reducer from './reducer'
 
 export default function CartItem({img, title, price, id}) {
     const {amount} = useGlobalContext()

@@ -8,7 +8,7 @@ export default [
     },
     {
       id: 2,
-      title: 'google pixel ',
+      title: 'google pixel Pro 10',
       price: 499.99,
       img: '../public/images/googlepixel.jpeg',
       amount: 1,

@@ -1,5 +1,7 @@
 
 
 export default function reducer(state, action) {
-    return state
+    if(action.type === 'CLEAR_CART') {
+        return {...state, cart: []}
+    }
 }
