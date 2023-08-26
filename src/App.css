@@ -211,7 +211,7 @@ Variables
   Cart Item
   ===============
   */
-  .cart-item {
+  /* .cart-item {
     display: grid;
     align-items: center;
     grid-template-columns: auto 1fr auto;
@@ -222,6 +222,9 @@ Variables
     width: 5rem;
     height: 5rem;
     object-fit: cover;
+  } */
+  .cart-item {
+    display: flex;
   }
   .cart-item h4 {
     margin-bottom: 0.5rem;
