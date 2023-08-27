@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useReducer } from 'react'
+import React, { createContext, useContext, useEffect, useReducer } from 'react'
 import cartItems from './data'
 import reducer from './reducer'
 
@@ -21,9 +21,24 @@ function AppProvider({children}) {
     function clearCart() {
         return dispatch({ type: 'CLEAR_CART' })
     }
+    function removeItem(id) {
+        return dispatch({ type: 'REMOVE_ITEM', payload: id})
+    }
+    function increment(id) {
+        return dispatch({type: 'INCREMENT', payload: id})
+    }
+
+    function decrement(id) {
+        return dispatch({type: 'DECREMENT', payload: id})
+    }
+    
+    useEffect(() => {
+        dispatch({ type: 'GET_TOTALS'})
+        // dispatch({type: 'nothing'}) => gives the error as it is not declared in the reducer function 
+    }, [state.cart])
 
     return (
-        <AppContext.Provider value={{...state, clearCart}}> 
+        <AppContext.Provider value={{...state, clearCart, removeItem, increment, decrement}}> 
             {children} 
         </AppContext.Provider>
     )
